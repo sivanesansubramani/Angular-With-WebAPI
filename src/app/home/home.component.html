@@ -1,0 +1,35 @@
+<!-- <p>home works!</p> -->
+<!-- <div *ngIf="data">
+    <p>Data fetched from API:</p>
+    <pre>{{ data | json }}</pre>
+  </div> -->
+  
+  <p>Home works!</p>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  
+
+  <!-- Optional: Show error message if data fetch fails -->
+  <div *ngIf="data.length === 0">
+    <p>No data available.</p>
+  </div>
+  
+  <table class="table table-striped" style="width:50%">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data"> <!-- Iterate over the array -->
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.role }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
